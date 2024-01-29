@@ -1,0 +1,66 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "SHA-256"
+author: "XAVIER Clément"
+category: Cryptography
+description: "ASCII"
+value: 150
+type: dynamic
+
+# The extra field provides additional fields for data during the install/sync commands/
+# Fields in extra can be used to supply additional information for other challenge types
+# For example the follow extra field is for dynamic challenges. To use these following
+# extra fields, set the type to "dynamic" and uncomment the "extra" section below
+extra:
+    initial: 150
+    decay: 10
+    minimum: 10
+
+# Flags specify answers that your challenge use. You should generally provide at least one.
+# Can be removed if unused
+# Accepts strings or dictionaries of CTFd API data
+flags:
+    # A static case sensitive flag
+    -----BEGIN PUBLIC KEY-----
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA50ZWvnB7BTuFNrZg/FFD
+    b3F/Ft2MhaLfRtROCmZ2EsnU8lbCNmUsAFfXdtunqQ5Alkm8LEvB2BDsI+KJ34tm
+    i/bGgDXnj0vhD3CkGNsCSjoeuWT92mjNMUn4XZ42AmVPNdT/LxthbvklOW/peyoH
+    VhkUjSlx/yQY0Ap0dSIW/6Q0GxRFJRS6gw/3rhOFyJI7aYlP4xjbVcIcFds5QlTS
+    wBxvrLvHoUm1fjyecw550lVUKI2qTKvMQ5FFyDInoNwvX04SdrjVhLLDvhsPdJTq
+    6KqNYavmOIA+3+9lD9hoX7vsUxiKIaHnPYATMsbMZX2eVQFeJu+zUy9WihM1RRBy
+    kwIDAQAB
+    -----END PUBLIC KEY-----
+
+# Tags are used to provide additional public tagging to a challenge
+# Can be removed if unused
+# Accepts strings
+tags:
+    - crypto
+    - mini script
+
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+    - src/private_key.pem
+
+# Hints are used to give players a way to buy or have suggestions. They are not
+# required but can be nice.
+# Can be removed if unused
+# Accepts dictionaries or strings
+hints:
+    - {
+        content: "Try convert password to hash",
+        cost: 10
+    }
+    - Learn about password are stored in database
+
+# The state of the challenge.
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "1.0.0"
